@@ -25,7 +25,7 @@ document.getElementById("calcul").addEventListener("click", function () {
 
     resultat.value = reponse;
   } else {
-    resultat.value = "remplir tous les champs";
+    resultat.value = "Données erronées (utilisez un . comme séparateur décimal)";
   }
 
   document.getElementById("hideDiv").style.display = "block";
