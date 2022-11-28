@@ -1,13 +1,15 @@
 document.getElementById("calcul").addEventListener("click", function () {
-  let distance = document.getElementById("distance"),
+  let VMA = document.getElementById("VMA"),
+    distance = document.getElementById("distance"),
     pourcentage = document.getElementById("pourcentage"),
-    VMA = document.getElementById("VMA"),
     resultat = document.querySelector('input[name="resultat"]');
 
-  if (distance.value != 0 && VMA.value != 0 && pourcentage.value != 0) {
-    let reponse =
-      distance.value /
-      (((VMA.value * 1000) / 3600) * (pourcentage.value / 100));
+  VMA = VMA.value;
+  distance = distance.value;
+  pourcentage = pourcentage.value;
+
+  if (distance != 0 && VMA != 0 && pourcentage != 0) {
+    let reponse = distance / (((VMA * 1000) / 3600) * (pourcentage / 100));
     if (reponse < 59) {
       reponse = `${Math.round(reponse)}s`;
     } else if (reponse < 3599) {
@@ -28,39 +30,3 @@ document.getElementById("calcul").addEventListener("click", function () {
 
   document.getElementById("hideDiv").style.display = "block";
 });
-
-/**
-if (distance.value != Nan && VMA.value != Nan && pourcentage.value != Nan) {
-    resultat.value =
-    distance.value / (((VMA.value * 1000) / 3600) * (pourcentage.value / 100));
-
-} else {
-    resultat.value =
-    "données invalides";
-}
-
-/**
- * 
-
-document.getElementById("calcul").addEventListener("click", function () {
-  let distance = document.getElementById("distance"),
-    pourcentage = document.getElementById("pourcentage"),
-    VMA = document.getElementById("VMA"),
-    resultat = document.querySelector('input[name="resultat"]');
-  resultat.value =
-    distance.value / (((VMA.value * 1000) / 3600) * (pourcentage.value / 100));
-});
-
-
- */
-
-/*
-let reponse;
-if (resultat < 59) {
-    reponse = ‘${resultat}s‘;
-} else {
-    let sec = resultat % 60;
-    let min = (resultat - sec) / 60;
-    reponse = ‘${min}min ${sec}s‘
-}
-*/
